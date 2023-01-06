@@ -1,4 +1,4 @@
--- creating test user and giving it permissions
+-- creating test user n the mysql server & giving it permissions
 
 CREATE DATABASE IF NOT EXISTS hbnb_test_db;
 GRANT USAGE ON *.*
