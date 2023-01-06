@@ -1,15 +1,13 @@
---setup the db test environment
+-- creating test user and giving it permissions
 
 CREATE DATABASE IF NOT EXISTS hbnb_test_db;
-CREATE USER
-    IF NOT EXISTS 'hbnb_test'@'localhost'
-    IDENTIFIED  BY 'hbnb_test_pwd';
-GRANT ALL PRIVILEDGES
-    ON `hbnb_test_db`.*
-    TO 'hbnb_test'@'localhost'
-    IDENTIFIED BY 'hbnb_test_pwd';
-GRANT SELECT
-    ON `perfomance_schema`.*
-    TO 'hbnb_test'@'localhost'
-    IDENTIFIED BY 'hbnb_test_pwd';
-FLUSH PRIVILEDGES;
+GRANT USAGE ON *.*
+      TO 'hbnb_test'@'localhost'
+      IDENTIFIED BY 'hbnb_test_pwd';
+GRANT ALL PRIVILEGES ON hbnb_test_db.*
+      TO 'hbnb_test'@'localhost'
+      IDENTIFIED BY 'hbnb_test_pwd';
+GRANT SELECT ON performance_schema.*
+      TO 'hbnb_test'@'localhost'
+      IDENTIFIED BY 'hbnb_test_pwd';
+FLUSH PRIVILEGES;
